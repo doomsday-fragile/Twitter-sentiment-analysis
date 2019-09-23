@@ -1,8 +1,13 @@
+#re is for regex
+#tweepy is a library for Twitter developer
+#textblob is a library for processing text data
+#configobj is a library for reading and writing. Generally a .ini file is used to read
 import re
 import tweepy
 from textblob import TextBlob
 from configobj import ConfigObj
 
+#the data of config.ini file is loaded in config varaible.
 config = ConfigObj('config.ini')
 
 
@@ -10,7 +15,8 @@ class TwitterClient(object):
     """
     Generic Twitter class for the app
     """
-
+    
+    #here we load the consumer key, secret and access token and secret inorder to access Twitter data
     def __init__(self, query, retweets_only=False, with_sentiment=False):
         # twitter apps keys and tokens
         consumer_key = config['CONSUMER_KEY']
